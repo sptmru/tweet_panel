@@ -36,6 +36,15 @@ $TwitterWrapper = new TwitterWrapper();
 						</nav>
 					</div>
 				</div>
+				<div>
+					<h4>Tweet Example blah-blah-Blah. Enjoy!</h4>
+				</div>
+				<div>
+					<h4>Tweet Example blah-blah-Blah. Enjoy!</h4>
+				</div>
+				<div>
+					<h4>Tweet Example blah-blah-Blah. Enjoy!</h4>
+				</div>
 			</div>
 		</div>
 	</div>
