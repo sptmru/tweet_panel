@@ -1,0 +1,10 @@
+name: twitter-api-app
+toolstack: "php:symfony"
+relationships:
+    database: "mysql:mysql"
+web:
+    # The public directory of the app, relative to its root.
+    document_root: "/"
+    # The front-controller script to send non-static requests to.
+    passthru: "/index.php"
+disk: 2048
