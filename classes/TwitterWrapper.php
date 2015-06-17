@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 require_once "TwitterAPIExchange.php";
-require_once "../config/config.php";
+require_once "config/config.php";
 
 class TwitterWrapper {
 
