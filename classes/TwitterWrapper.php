@@ -41,6 +41,7 @@ class TwitterWrapper {
 
 		$lastTweet = end($allTweets);
 		$oldestID = $lastTweet->id - 1;
+		echo $oldestID."<br />"
 		$requestParams = '?screen_name='.$username.'&count=200&max_id='.$oldestID;
 
 		while(!empty($newTweets)) {
@@ -48,6 +49,7 @@ class TwitterWrapper {
 			$allTweets = array_merge($allTweets, $newTweets);
 			$lastTweet = end($allTweets);
 			$oldestID = $lastTweet->id - 1;
+			echo $oldestID."<br />";
 
 		}
 
