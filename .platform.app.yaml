@@ -1,4 +1,4 @@
-name: twitter-api-app
+name: twitterapiapp
 toolstack: "php:symfony"
 relationships:
     database: "mysql:mysql"

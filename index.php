@@ -1,5 +1,5 @@
 <?php 
 
-echo "Testing Aerobatic.io";
+echo "Testing Platform.sh — simple index script with echo";
 
 ?>
