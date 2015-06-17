@@ -2,9 +2,11 @@
 header('Content-Type: text/html; charset=utf-8');
 
 require_once "TwitterAPIExchange.php";
+require_once "../config/config.php";
 
 class TwitterWrapper {
 
+	private $mysqli = '';
 	private $settings = array();
 	private $Twitter;
 
@@ -15,23 +17,27 @@ class TwitterWrapper {
 			->performRequest();
 		return $result;
 	}
-	
-	public function __construct($oauthToken, $oauthSecret, $consumerKey, $consumerSecret) {
-		$this->settings = array(
-			'oauth_access_token' => $oauthToken,
-			'oauth_access_token_secret' => $oauthSecret,
-			'consumer_key' => $consumerKey,
-			'consumer_secret' => $consumerSecret
-			);
-		$this->Twitter = new TwitterAPIExchange($this->settings);
-	}
 
-	public function getTimelineFor($username, $requestParams) {
+
+	private function getTimelineFor($username, $requestParams) {
 		$requestUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 		$jsonResult = $this->makeGETRequest($requestUrl, $requestParams);
 		$result = json_decode($jsonResult);
 
 		return $result;
+	}
+	
+	public function __construct() {
+		$this->settings = array(
+			'oauth_access_token' => OAUTH_TOKEN,
+			'oauth_access_token_secret' => OAUTH_SECRET,
+			'consumer_key' => CONSUMER_KEY,
+			'consumer_secret' => CONSUMER_SECRET
+			);
+		$this->Twitter = new TwitterAPIExchange($this->settings);
+
+		$this->mysqli = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
+		$this->mysqli->set_charset('utf8');
 	}
 
 	public function getAllTweetsfor($username) {
@@ -53,6 +59,16 @@ class TwitterWrapper {
 		}
 
 		return $allTweets;
+	}
+
+	public function putAllTweetsToDatabase($tweets) {
+		foreach ($tweets as $tweet) {
+			$stmt = $this->mysqli->prepare("INSERT INTO tweets (id, datetime, text) VALUES(?, ?, ?)");
+			$stmt->bind_param('sss', $tweet->id, $tweet->created_at, $tweet->text);
+
+			$stmt->execute();
+			$stmt->close();
+		}
 	}
 
 
