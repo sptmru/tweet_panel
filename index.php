@@ -13,6 +13,7 @@ $TwitterWrapper = new TwitterWrapper($oauthToken, $oauthSecret, $consumerKey, $c
 
 
 $allTweets = $TwitterWrapper->getAllTweetsfor("supporteamru");
+$TwitterWrapper->putAllTweetsToDatabase($allTweets);
 
 foreach ($allTweets as $tweet) {
 	echo "Created at: ".$tweet->created_at."<br />";
