@@ -11,6 +11,6 @@ require_once ('classes/TwitterWrapper.php');
 $TwitterWrapper = new TwitterWrapper($oauthToken, $oauthSecret, $consumerKey, $consumerSecret);
 
 
-$timeline = $TwitterWrapper->getTimelineFor("supporteam");
+$timeline = $TwitterWrapper->getTimelineFor("supporteamru");
 print_r($timeline);
 ?>
