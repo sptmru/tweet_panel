@@ -12,18 +12,21 @@ require_once ('classes/TwitterWrapper.php');
 $TwitterWrapper = new TwitterWrapper($oauthToken, $oauthSecret, $consumerKey, $consumerSecret);
 
 
-$timeline = $TwitterWrapper->getAllTweetsfor("supporteamru");
-//print_r($timeline[15]);
-$tweet = $timeline[15];
+$allTweets = $TwitterWrapper->getAllTweetsfor("supporteamru");
 
-Echo "Created at: ".$tweet->created_at."<br />";
-Echo "ID: ".$tweet->id."<br />";
-echo "Text: ".$tweet->text."<br />";
-echo "Source: ".$tweet->source."<br />";
-Echo "Truncated: ".$tweet->truncated."<br />";
-Echo "In reply to status ID: ".$tweet->in_reply_to_status_id."<br />";
-Echo "In reply to user ID: ".$tweet->in_reply_to_user_id."<br />";
-Echo "In reply to user name: ".$tweet->in_reply_to_screen_name."<br />";
+foreach ($allTweets as $tweet) {
+	echo "Created at: ".$tweet->created_at."<br />";
+	echo "ID: ".$tweet->id."<br />";
+	echo "Text: ".$tweet->text."<br />";
+	echo "Source: ".$tweet->source."<br />";
+	echo "Truncated: ".$tweet->truncated."<br />";
+	echo "In reply to status ID: ".$tweet->in_reply_to_status_id."<br />";
+	echo "In reply to user ID: ".$tweet->in_reply_to_user_id."<br />";	
+	echo "In reply to user name: ".$tweet->in_reply_to_screen_name."<br />";
+	echo "<br /><br />";
+	echo "-----------------------------------------";
+	echo "<br /><br />";
+}
 
 
 ?>
