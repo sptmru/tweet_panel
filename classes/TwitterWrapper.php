@@ -1,6 +1,6 @@
 <?php
 
-require_once "twitter-api-php/TwitterAPIExchange.php";
+require_once "TwitterAPIExchange.php";
 
 class TwitterWrapper {
 
