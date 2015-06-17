@@ -35,18 +35,19 @@ class TwitterWrapper {
 
 	public function getAllTweetsfor($username) {
 		$allTweets = array();
-		$newTweets = $this->getTimelineFor($username);
+		$requestParams = '?screen_name='.$username.'&count=200';
+		$newTweets = $this->getTimelineFor($username, $requestParams);
 		$allTweets = array_merge($allTweets, $newTweets);
 
 		$lastTweet = end($allTweets);
-		$oldestID = $last['id'] - 1;
+		$oldestID = $lastTweet['id'] - 1;
 		$requestParams = '?screen_name='.$username.'&count=200&max_id='.$oldestID;
 
 		while(!empty($newTweets)) {
 			$newTweets = $this->getTimelineFor($username, $requestParams);
 			$allTweets = array_merge($allTweets, $newTweets);
 			$lastTweet = end($allTweets);
-			$oldestID = $last['id'] - 1;
+			$oldestID = $lastTweet['id'] - 1;
 		}
 
 		return $allTweets;
