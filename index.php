@@ -11,7 +11,5 @@ require_once ('classes/TwitterWrapper.php');
 $TwitterWrapper = new TwitterWrapper($oauthToken, $oauthSecret, $consumerKey, $consumerSecret);
 
 
-$requestUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$requestParams = '?screen_name=supporteamru';
-echo $TwitterWrapper->makeGETRequest($requestUrl, $requestParams);
+echo $TwitterWrapper->getTimelineFor("supporteam");
 ?>
