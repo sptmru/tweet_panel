@@ -12,5 +12,17 @@ $TwitterWrapper = new TwitterWrapper($oauthToken, $oauthSecret, $consumerKey, $c
 
 
 $timeline = $TwitterWrapper->getAllTweetsfor("supporteamru");
-print_r($timeline[15]);
+//print_r($timeline[15]);
+$tweet = $timeline[15];
+
+Echo "Created at: ".$tweet->created_at."<br />";
+Echo "ID: ".$tweet->id."<br />";
+echo "Text: ".$tweet->text."<br />";
+echo "Source: ".$tweet->source."<br />";
+Echo "Truncated: ".$tweet->truncated."<br />";
+Echo "In reply to status ID: ".$tweet->in_reply_to_status_id."<br />";
+Echo "In reply to user ID: "$tweet->in_reply_to_user_id."<br />";
+Echo "In reply to user name: "$tweet->in_reply_to_screen_name."<br />";
+
+
 ?>
