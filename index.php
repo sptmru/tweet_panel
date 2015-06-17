@@ -1,4 +1,5 @@
 <?php 
+header('Content-Type: text/html; charset=utf-8');
 
 //TODO: credentials are here when testing, please move it to config file when done
 $oauthToken = '1101134347-n14Ps59pjDfpooMIaLgzlCZd2bW9tm1RWm4x5FR';
