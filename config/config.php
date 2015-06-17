@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 
 define('MYSQL_HOST', '92.242.44.30');
 define('MYSQL_USER', 'twitter_api_app');
