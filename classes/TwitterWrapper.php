@@ -25,7 +25,7 @@ class TwitterWrapper {
 		$this->Twitter = new TwitterAPIExchange($this->settings);
 	}
 
-	public function getTimeline($username) {
+	public function getTimelineFor($username) {
 		$requestUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 		$requestParams = '?screen_name='.$username;
 		$jsonResult = $this->makeGETRequest($requestUrl, $requestParams);
