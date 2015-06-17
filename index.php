@@ -12,5 +12,5 @@ $TwitterWrapper = new TwitterWrapper($oauthToken, $oauthSecret, $consumerKey, $c
 
 
 $timeline = $TwitterWrapper->getAllTweetsfor("supporteamru");
-print_r($timeline);
+print_r($timeline[15]);
 ?>
