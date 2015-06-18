@@ -31,20 +31,24 @@ $TwitterWrapper = new TwitterWrapper();
 						<nav>
 							<ul class="nav masthead-nav">
 								<li class="active"><a href="#">Show tweets</a></li>
-								<li><a href="#">Load tweets to DB</a></li>
+								<li><a href="/updatabase.php">Load tweets to DB</a></li>
 							</ul>
 						</nav>
 					</div>
 				</div>
-				<div>
-					<h4>Tweet Example blah-blah-Blah. Enjoy!</h4>
-				</div>
-				<div>
-					<h4>Tweet Example blah-blah-Blah. Enjoy!</h4>
-				</div>
-				<div>
-					<h4>Tweet Example blah-blah-Blah. Enjoy!</h4>
-				</div>
+				<br /> <br />
+				<?php
+					while ($tweet = $result->fetch_array(MYSQLI_ASSOC)) {
+						$id = $tweet['id'];
+						$datetime = $tweet['datetime'];
+						$text = $tweet['text'];
+			
+						echo "<div>";
+						echo "<h4>".$text."</h4>";
+						echo "<p class='text-right'>".$datetime."</p>";
+						echo "</div>";
+					} 
+				?>
 			</div>
 		</div>
 	</div>

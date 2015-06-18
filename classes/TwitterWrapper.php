@@ -70,6 +70,11 @@ class TwitterWrapper {
 			$stmt->close();
 		}
 	}
+	
+	public function getAllTweetsFromDatabase($tweets) {
+		$result = $this->mysqli->query("SELECT * FROM tweets");
+		return $result;
+	}
 
 
 
