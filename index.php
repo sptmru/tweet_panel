@@ -3,6 +3,10 @@
 require_once ('classes/TwitterWrapper.php');
 $TwitterWrapper = new TwitterWrapper();
 
+if($_GET['actions']) {
+	echo "<h1>".$_POST['name']."</h1>";
+}
+
 ?>
 
 <!DOCTYPE html>

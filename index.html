@@ -35,9 +35,12 @@
 					<br />
 					<div class='row'>
 						<div class='text-left col-md-6'>
-							<input class='btn btn-success' type='button' value='Favourite'>
-							<input class='btn btn-warning' type='button' value='Retweet'>
-							<input class='btn btn-info' type='button' value='Answer'>
+							<form action='index.php?actions=1' method='post' class='form-inline'>
+								<input class='btn btn-success' type='submit' name='favourite' value='Favourite'>
+								<input class='btn btn-warning' type='submit' name='retweet' value='Retweet'>
+								<input class='btn btn-info' type='submit' name='answer' value='Answer'>
+							</form>
+							
 						</div>				
 						<div style='margin-top: 2%' class= 'text-right col-md-6'>
 							23 May 2015 13:24
