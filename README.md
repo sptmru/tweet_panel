@@ -1,13 +1,19 @@
-# Expert PHP developer and Twitter API (Elance project)
-- Client nickname on Elance: Eric80
-- Date: 17/06/2015
+# Twitter API Project
 
-### Description
-> - Сreate a Class with the following mandatory methods: 
-	- connect to the Twitter REST API and Call statuses (tweets).
-	- update the database with data from the API response and additional methods of your choice and need.
-- Сreate a MySQL DB with a logical structure to save and easily access the twitter data.
-- Сreate a updatabase.php to update the database with data from https://twitter.com/eriction
-- Сreate a index file to show the cached tweets with possibility to answer, retweet and favorite each tweet. Design the page in a general ekomi like design of your choice.
+Simple tweet panel using Twitter API
 
-##### You must not use the Twitter Javascript Widget and/or the Twitter Javascript API. Only PHP, MySQL, HTML and CSS are valid for a solution.
+### Installation
+
+1) Update Twitter API credentials in config/config.php.
+2) Create empty MySQL database for the app on your server.
+3) Update MySQL connection credentials in config/config.php.
+4) Import the dump (dump.sql) to your database.
+
+### Using
+
+1) Press "Load tweets to DB" link on page and wait a little. Then you'll receive "he tweets were uploaded to the database." message. Then the app is ready to use. Press "Show tweets".
+2) You can see all the tweets from DB on page. Press "Favourite" to add the tweet to your favourites, "Retweet" is for retweeting and "Answer" is for writing back (do not delete the username at the textarea!).
+
+### Contacts
+In case of any questions please contact me on Elance (https://www.elance.com/s/supporteam/, on Skype (supporteam.ru) or by email (me@supporteam.ru).
+

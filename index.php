@@ -16,7 +16,7 @@ header('Content-Type: text/html; charset=utf-8');
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 	<!-- Custom styles for this template -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 </head>
 
 <?php 
