@@ -35,7 +35,7 @@ class TwitterWrapper {
 		return $result;
 	}
 	
-	private function getUsernameFor($tweetId) {
+	public function getUsernameFor($tweetId) {
 		$requestUrl = 'https://api.twitter.com/1.1/statuses/show.json';
 		$requestParams = '?id='.$id;
 		$jsonResult = $this->makeGETRequest($requestUrl, $requestParams);
