@@ -17,6 +17,14 @@ class TwitterWrapper {
 			->performRequest();
 		return $result;
 	}
+	
+	private function makePOSTRequest($url, $postFields) {
+		$requestMethod = 'POST';
+		$result = $this->Twitter->buildOauth($url, $requestMethod)
+			->setPostfields($postFields)
+			->performRequest();
+		return $result;
+	}
 
 
 	private function getTimelineFor($username, $requestParams) {
@@ -75,7 +83,25 @@ class TwitterWrapper {
 		$result = $this->mysqli->query("SELECT * FROM tweets");
 		return $result;
 	}
-
-
-
+	
+	public function addToFavourites($id) {
+		$url = 'https://api.twitter.com/1.1/favorites/create.json';
+		$postFields = array(
+			'id' => $id
+		);
+		$this->makePOSTRequest($url, $postFields);
+	}
+	
+	public function retweet($id) {
+		$url = 'https://api.twitter.com/1.1/statuses/retweet/:id.json';
+		$postFields = array(
+			'id' => $id
+		);
+		$this->makePOSTRequest($url, $postFields);
+	}
+	
+	public function answerTo($id, $message) {
+		
+	}
+	
 }
