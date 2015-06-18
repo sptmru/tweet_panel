@@ -3,9 +3,19 @@
 require_once ('classes/TwitterWrapper.php');
 $TwitterWrapper = new TwitterWrapper();
 
-if($_GET['actions']) {
-	echo "<h1>".$_POST['name']."</h1>";
+if(isset($_GET['actions']) && isset($_POST)) {
+	if($_GET['actions']) {
+		
+		if($_POST['favourite']) {
+			echo "<h1>Favourite</h1>";
+		} else if($_POST['retweet']) {
+			echo "<h1>Retweet</h1>";
+		} else if($_POST['answer']) {
+			echo "<h1>Answer</h1>";
+		}
+	}
 }
+
 
 ?>
 
