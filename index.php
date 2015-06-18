@@ -46,7 +46,7 @@ $TwitterWrapper = new TwitterWrapper();
 						$date = substr($datetime, 4, 12);
 						$text = $tweet['text'];
 			
-						echo "<div>";
+						echo "<div class='highlight'>";
 						echo "<h4>".$text."</h4>";
 						echo "<p class='text-right'>".$date.", ".$year."</p>";
 						echo "</div>";
