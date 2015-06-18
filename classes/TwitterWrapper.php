@@ -93,7 +93,7 @@ class TwitterWrapper {
 	}
 	
 	public function retweet($id) {
-		$url = 'https://api.twitter.com/1.1/statuses/retweet/:id.json';
+		$url = 'https://api.twitter.com/1.1/statuses/retweet/'.$id.'.json';
 		$postFields = array(
 			'id' => $id
 		);
