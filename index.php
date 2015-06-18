@@ -5,13 +5,13 @@ $TwitterWrapper = new TwitterWrapper();
 
 if(isset($_GET['action'])) {
 	$id = $_GET['id'];		
-	if($_GET['action'] = 'favourite') {
+	if($_GET['action'] == 'favourite') {
 		$TwitterWrapper->addToFavourites($id);
 		echo "<h1>Added to favourites</h1>";
-	} else if($_GET['action'] = 'retweet') {
+	} else if($_GET['action'] == 'retweet') {
 		$TwitterWrapper->retweet($id);
 		echo "<h1>Retweeted</h1>";
-	} else if($_GET['action'] = 'answer') {
+	} else if($_GET['action'] == 'answer') {
 		echo "<h1>Answer</h1>";
 	}
 }
