@@ -12,7 +12,7 @@ if(isset($_GET['action'])) {
 		$TwitterWrapper->retweet($id);
 		echo "<h1>Retweeted</h1>";
 	} else if($_GET['action'] == 'answer') {
-		echo "<h1>Answer</h1>";
+		echo "<h1>@".$TwitterWrapper->getUsernameFor($id)." </h1>";
 	}
 }
 

@@ -35,6 +35,15 @@ class TwitterWrapper {
 		return $result;
 	}
 	
+	private function getUsernameFor($tweetId) {
+		$requestUrl = 'https://api.twitter.com/1.1/statuses/show.json';
+		$requestParams = '?id='.$id;
+		$jsonResult = $this->makeGETRequest($requestUrl, $requestParams);
+		$result = json_decode($jsonResult);
+		$username = $result->user->screen_name;
+		return $username;
+	}
+	
 	public function __construct() {
 		$this->settings = array(
 			'oauth_access_token' => OAUTH_TOKEN,
