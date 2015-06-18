@@ -42,11 +42,13 @@ $TwitterWrapper = new TwitterWrapper();
 					while ($tweet = $result->fetch_array(MYSQLI_ASSOC)) {
 						$id = $tweet['id'];
 						$datetime = $tweet['datetime'];
+						$year = substr($datetime, -4);
+						$date = substr($datetime, 0, 16);
 						$text = $tweet['text'];
 			
 						echo "<div>";
 						echo "<h4>".$text."</h4>";
-						echo "<p class='text-right'>".$datetime."</p>";
+						echo "<p class='text-right'>".$date.", ".$year."</p>";
 						echo "</div>";
 					} 
 				?>
