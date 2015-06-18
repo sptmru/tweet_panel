@@ -55,9 +55,11 @@ if($_GET['actions']) {
 						echo "<br />";
 						echo "<div class='row'>";
 						echo "<div class='text-left col-md-6'>";
-						echo "<input class='btn btn-success' type='button' value='Favourite'>";
-						echo "<input class='btn btn-warning' type='button' value='Retweet'>";
-						echo "<input class='btn btn-info' type='button' value='Answer'>";
+						echo "<form action='index.php?actions=1' method='post' class='form-inline'>";
+						echo "<input class='btn btn-success' type='submit' name='favourite' value='Favourite'>";
+						echo "<input class='btn btn-warning' type='submit' name='retweet' value='Retweet'>";
+						echo "<input class='btn btn-info' type='submit' name='answer' value='Answer'>";
+						echo "</form>";
 						echo "</div>";
 						echo "<div style='margin-top: 2%' class= 'text-right col-md-6'>";
 						echo $date.", ".$year;
