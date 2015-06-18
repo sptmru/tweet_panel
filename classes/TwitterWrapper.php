@@ -110,7 +110,12 @@ class TwitterWrapper {
 	}
 	
 	public function answerTo($id, $message) {
-		
+		$url = 'https://api.twitter.com/1.1/statuses/update.json';
+		$postFields = array(
+			'status' => $message,
+			'in_reply_to_status_id' => $id
+		);
+		$this->makePOSTRequest($url, $postFields);
 	}
 	
 }

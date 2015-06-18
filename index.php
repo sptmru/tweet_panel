@@ -12,7 +12,16 @@ if(isset($_GET['action'])) {
 		$TwitterWrapper->retweet($id);
 		echo "<h1>Retweeted</h1>";
 	} else if($_GET['action'] == 'answer') {
-		echo "<h1>@".$TwitterWrapper->getUsernameFor($id)." </h1>";
+		echo "<form method='POST' action='index.php/?action=sendtweet&id=".$id."'>";
+		echo "<p><b>Enter your answer here: </b></p>";
+		echo "<textarea class='form-control' rows='3' maxlength='140' name='tweet'>".$TwitterWrapper->getUsernameFor($id)."</textarea>";
+		echo "<input class='btn btn-success' type='submit' value='Send'>";
+		echo "</form>";
+	} else if($_GET['action'] == 'sendtweet') {
+		$tweet = $_POST['tweet'];
+		$id = $_GET['id'];
+		$TwitterWrapper->answerTo($id, $tweet);
+		echo "<h1>Answered</h1>";
 	}
 }
 
