@@ -6,16 +6,15 @@ $TwitterWrapper = new TwitterWrapper();
 if(isset($_GET['actions']) && isset($_POST)) {
 	if($_GET['actions']) {
 		
-		if($_POST['favourite']) {
+		if(@$_POST['favourite']) {
 			echo "<h1>Favourite</h1>";
-		} else if($_POST['retweet']) {
+		} else if(@$_POST['retweet']) {
 			echo "<h1>Retweet</h1>";
-		} else if($_POST['answer']) {
+		} else if(@$_POST['answer']) {
 			echo "<h1>Answer</h1>";
 		}
 	}
 }
-
 
 ?>
 
