@@ -64,9 +64,9 @@ if(isset($_GET['action'])) {
 						echo "<br />";
 						echo "<div class='row'>";
 						echo "<div class='text-left col-md-6'>";
-						echo "<a href='/index.php?id=".$id."&action=favourite><input class='btn btn-success' type='button' name='favourite' value='Favourite'></a>";
-						echo "<a href='/index.php?id=".$id."&action=retweet><input class='btn btn-warning' type='button' name='retweet' value='Retweet'>";
-						echo "<a href='/index.php?id=".$id."&action=answer><input class='btn btn-info' type='button' name='answer' value='Answer'>";
+						echo "<a href='/index.php?id=".$id."&action=favourite'><input class='btn btn-success' type='button' name='favourite' value='Favourite'></a>";
+						echo "<a href='/index.php?id=".$id."&action=retweet'><input class='btn btn-warning' type='button' name='retweet' value='Retweet'>";
+						echo "<a href='/index.php?id=".$id."&action=answer'><input class='btn btn-info' type='button' name='answer' value='Answer'>";
 						echo "</div>";
 						echo "<div style='margin-top: 2%' class= 'text-right col-md-6'>";
 						echo $date.", ".$year;
