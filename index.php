@@ -43,7 +43,7 @@ if(isset($_GET['action'])) {
 						<h3 class="masthead-brand">Tweets</h3>
 						<nav>
 							<ul class="nav masthead-nav">
-								<li class="active"><a href="#">Show tweets</a></li>
+								<li class="active"><a href="/">Show tweets</a></li>
 								<li><a href="/updatabase.php">Load tweets to DB</a></li>
 							</ul>
 						</nav>
