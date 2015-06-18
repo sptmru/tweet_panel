@@ -1,13 +1,5 @@
 <?php
-
-require_once ('classes/TwitterWrapper.php');
-$TwitterWrapper = new TwitterWrapper();
-
-$username = "eriction"; //Twitter username to get tweets from
-
-$allTweets = $TwitterWrapper->getAllTweetsfor($username);
-$TwitterWrapper->putAllTweetsToDatabase($allTweets);
-
+header('Content-Type: text/html; charset=utf-8');
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +18,20 @@ $TwitterWrapper->putAllTweetsToDatabase($allTweets);
 	<!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
 </head>
+
+<?php
+
+require_once ('classes/TwitterWrapper.php');
+$TwitterWrapper = new TwitterWrapper();
+
+$username = "eriction"; //Twitter username to get tweets from
+
+$allTweets = $TwitterWrapper->getAllTweetsfor($username);
+$TwitterWrapper->putAllTweetsToDatabase($allTweets);
+
+?>
+
+
 <body>
 	<div class="site-wrapper">
 		<div class="site-wrapper-inner">
