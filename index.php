@@ -43,7 +43,7 @@ $TwitterWrapper = new TwitterWrapper();
 						$id = $tweet['id'];
 						$datetime = $tweet['datetime'];
 						$year = substr($datetime, -4);
-						$date = substr($datetime, 0, 16);
+						$date = substr($datetime, 4, 12);
 						$text = $tweet['text'];
 			
 						echo "<div>";
