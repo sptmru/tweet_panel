@@ -48,7 +48,17 @@ $TwitterWrapper = new TwitterWrapper();
 			
 						echo "<div class='highlight'>";
 						echo "<h4>".$text."</h4>";
-						echo "<p class='text-right'>".$date.", ".$year."</p>";
+						echo "<br />";
+						echo "<div class='row'>";
+						echo "<div class='text-left col-md-6'>";
+						echo "<input class='btn btn-success' type='button' value='Favourite'>";
+						echo "<input class='btn btn-warning' type='button' value='Retweet'>";
+						echo "<input class='btn btn-info' type='button' value='Answer'>";
+						echo "</div>";
+						echo "<div style='margin-top: 2%' class= 'text-right col-md-6'>";
+						echo $date.", ".$year;
+						echo "</div>";
+						echo "</div>";
 						echo "</div>";
 					} 
 				?>
