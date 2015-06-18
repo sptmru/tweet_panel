@@ -14,7 +14,7 @@ if(isset($_GET['action'])) {
 	} else if($_GET['action'] == 'answer') {
 		echo "<form method='POST' action='index.php/?action=sendtweet&id=".$id."'>";
 		echo "<p><b>Enter your answer here: </b></p>";
-		echo "<textarea class='form-control' rows='3' maxlength='140' name='tweet'>".$TwitterWrapper->getUsernameFor($id)."</textarea>";
+		echo "<textarea class='form-control' rows='3' maxlength='140' name='tweet'>@".$TwitterWrapper->getUsernameFor($id)."</textarea>";
 		echo "<input class='btn btn-success' type='submit' value='Send'>";
 		echo "</form>";
 	} else if($_GET['action'] == 'sendtweet') {
