@@ -22,6 +22,7 @@ if(isset($_GET['action'])) {
 		$id = $_GET['id'];
 		$TwitterWrapper->answerTo($id, $tweet);
 		echo "<h1>Answered</h1>";
+		echo $tweet;
 	}
 }
 
