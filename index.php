@@ -38,6 +38,7 @@ $TwitterWrapper = new TwitterWrapper();
 				</div>
 				<br /> <br />
 				<?php
+					$result = $TwitterWrapper->getAllTweetsFromDatabase();
 					while ($tweet = $result->fetch_array(MYSQLI_ASSOC)) {
 						$id = $tweet['id'];
 						$datetime = $tweet['datetime'];
